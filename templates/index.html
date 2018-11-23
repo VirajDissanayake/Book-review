@@ -1,0 +1,33 @@
+<!--Viraj Dissanayake
+    CS50 Project1-->
+{% extends "layout.html" %}
+{% block title %}CS50 Project1{% endblock %}
+{% block main %}
+  {% if not user %}
+  <h1 class="display-3" align="center">WELCOME TO</h1>
+  <br><br>
+  <div class="text-center">
+   <img class="img-fluid" src="http://d.gr-assets.com/misc/1454549184-1454549184_goodreads_misc.jpg" width="60%"></div>
+  <br><br>
+  <nav class="navbar navbar-expand-lg navbar-light bg-dark"></nav>
+  <h5 class="display-4" align="center">Login if you are already a member</h3><br><br><br><br>
+  <h3 class="display-4" align="center">New to here <p class="lead"><a href="/register">Register</a></p></h3>>
+  <br><br>
+  <div class="text-center">
+   <img class="img-fluid" src="https://cdn-images-1.medium.com/max/2000/1*Qd6XyPlotFCPj5bjASzC0Q.jpeg" width="100%"></div>
+  <div style="height: 70px;"></div>
+  {% endif %}
+  {% if user %}
+    <p align="left"><font size="4px">&nbsp You are logged in as: {{ user }}</font></p>
+    <br>
+    <br>
+    <div class="text-center">
+     <img class="img-fluid" src="http://d.gr-assets.com/misc/1454549184-1454549184_goodreads_misc.jpg" width="40%"></div><br><br><br>
+     <h1 class="display-4" align="center"><a href="/search" alt="search">Let's start Searching for a great book {{ user }} </a></h5><br><br><br><br><br><br>
+       <div class="text-center">
+        <img class="img-fluid" src="https://cdn-images-1.medium.com/max/2000/1*Qd6XyPlotFCPj5bjASzC0Q.jpeg" width="100%"></div>
+  {% endif %}
+  {% if message %}
+    {{ message }}
+  {% endif %}
+{% endblock %}
